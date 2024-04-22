@@ -10,7 +10,7 @@ tmapDeckGLCompWidth = function(comp, o) {
 	UseMethod("tmapDeckGLCompWidth")
 }
 
-tmapDeckGLLegPlot = function(comp, lf, o) {
+tmapDeckGLLegPlot = function(comp, deck, o) {
 	UseMethod("tmapDeckGLLegPlot")
 }
 

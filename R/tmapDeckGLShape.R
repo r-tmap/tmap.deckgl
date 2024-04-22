@@ -1,3 +1,8 @@
+#' @param bbx bbx
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLShape
+#' @rdname tmapDeckGL
 tmapDeckGLShape = function(bbx, facet_row, facet_col, facet_page, o) {
 	dummy = get_deck(facet_row, facet_col, facet_page)
 
@@ -15,6 +20,10 @@ tmapDeckGLShape = function(bbx, facet_row, facet_col, facet_page, o) {
 	NULL
 }
 
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLOverlay
+#' @rdname tmapDeckGL
 tmapDeckGLOverlay = function(facet_row, facet_col, facet_page, o) {
 	NULL	
 }

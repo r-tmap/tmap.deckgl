@@ -37,10 +37,20 @@ assign_deck = function(deck, facet_row, facet_col, facet_page) {
 	NULL
 }
 
-tmapLeafletWrap = function(label, facet_row, facet_col, facet_page, o) {
-	
+#' @param label label
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLWrap
+#' @rdname tmapDeckGL
+tmapDeckGLWrap = function(label, facet_row, facet_col, facet_page, o) {
 	NULL
 }
 
-tmapLeafletXtab = function(label, facet_row, facet_col, facet_page, o) {
+
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLXtab
+#' @rdname tmapDeckGL
+tmapDeckGLXtab = function(label, facet_row, facet_col, facet_page, o) {
+	NULL
 }

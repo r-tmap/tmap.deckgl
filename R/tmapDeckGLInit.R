@@ -1,4 +1,9 @@
-
+#' @param return.asp return.asp
+#' @param vp vp
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLInit
+#' @rdname tmapDeckGL
 tmapDeckGLInit = function(o, return.asp = FALSE, vp) {
 	if (return.asp) return(1)
 	
@@ -24,6 +29,11 @@ tmapDeckGLInit = function(o, return.asp = FALSE, vp) {
 	NULL
 }
 
+#' @param q q
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLAux
+#' @rdname tmapDeckGL
 tmapDeckGLAux = function(o, q) {
 	NULL
 }

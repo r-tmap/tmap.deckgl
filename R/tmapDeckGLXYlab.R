@@ -1,9 +1,16 @@
-tmapLeafletXlab = function(facet_page, o) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLXlab
+#' @rdname tmapDeckGL
+tmapDeckGLXlab = function(facet_page, o) {
 	NULL
 	
 }
 
-
-tmapLeafletYlab = function(facet_page, o) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLYlab
+#' @rdname tmapDeckGL
+tmapDeckGLYlab = function(facet_page, o) {
 	NULL
 }

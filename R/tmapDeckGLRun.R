@@ -1,3 +1,10 @@
+#' @param show show
+#' @param knit knit
+#' @param arg args
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLRun
+#' @rdname tmapDeckGL
 tmapDeckGLRun = function(o, show, knit, args) {
 	decks = get("decks", envir = .TMAP_DECKGL)
 	

@@ -1,4 +1,8 @@
-
+#' @param shpTM, dt, pdt, popup.format, hdt, idt, gp args
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLPolygons
+#' @rdname tmapDeckGL
 tmapDeckGLPolygons = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
 	deck = get_deck(facet_row, facet_col, facet_page)
 	
@@ -33,7 +37,10 @@ tmapDeckGLPolygons = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, f
 	NULL	
 }
 
-
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLLines
+#' @rdname tmapDeckGL
 tmapDeckGLLines = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
 	deck = get_deck(facet_row, facet_col, facet_page)
 	
@@ -90,7 +97,11 @@ lty2dash = function(lty) {
 	
 }
 
-tmapLeafletLines = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLLines
+#' @rdname tmapDeckGL
+tmapDeckGLLines = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o) {
 	# lf = get_lf(facet_row, facet_col, facet_page)
 	# 
 	# rc_text = frc(facet_row, facet_col)
@@ -109,7 +120,7 @@ tmapLeafletLines = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, fac
 	# gp = impute_gp(gp, dt)
 	# gp = rescale_gp(gp, o$scale_down)
 	# 
-	# opt = leaflet::pathOptions(interactive = TRUE, pane = pane)
+	# opt = DeckGL::pathOptions(interactive = TRUE, pane = pane)
 	# 
 	# if (o$use.WebGL) {
 	# 	shp2 = sf::st_sf(id = 1:length(shp), geom = shp)
@@ -120,14 +131,18 @@ tmapLeafletLines = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, fac
 	# 		assign_lf(facet_row, facet_col, facet_page)
 	# } else {
 	# 	lf %>% 
-	# 		leaflet::addPolylines(data = shp, layerId = idt, label = hdt, color = gp$col, opacity = gp$col_alpha, weight = gp$lwd, group = group, options = opt, dashArray = lty2dash(gp$lty), popup = popups) %>% 
+	# 		DeckGL::addPolylines(data = shp, layerId = idt, label = hdt, color = gp$col, opacity = gp$col_alpha, weight = gp$lwd, group = group, options = opt, dashArray = lty2dash(gp$lty), popup = popups) %>% 
 	# 		assign_lf(facet_row, facet_col, facet_page)
 	# 	
 	# }
 	NULL	
 }
 
-tmapLeafletSymbols = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLSymbols
+#' @rdname tmapDeckGL
+tmapDeckGLSymbols = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
 	# lf = get_lf(facet_row, facet_col, facet_page)
 	# 
 	# rc_text = frc(facet_row, facet_col)
@@ -149,7 +164,7 @@ tmapLeafletSymbols = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, f
 	# 
 	# coords = sf::st_coordinates(shp)
 	# 
-	# opt = leaflet::pathOptions(interactive = TRUE, pane = pane)
+	# opt = DeckGL::pathOptions(interactive = TRUE, pane = pane)
 	# 
 	# gp2 = gp_to_lpar(gp, mfun = "Symbols")
 	# #gp = gp2leafgp(gp)
@@ -192,7 +207,7 @@ tmapLeafletSymbols = function(shpTM, dt, pdt, popup.format, hdt, idt, gp, bbx, f
 	# 		}
 	# 	}
 	# 
-	# 	lf %>% leaflet::addMarkers(lng = coords[, 1], lat = coords[, 2], 
+	# 	lf %>% DeckGL::addMarkers(lng = coords[, 1], lat = coords[, 2], 
 	# 							  icon = symbols, group = group, layerId = idt, label = hdt, popup = popups) %>% 
 	# 		assign_lf(facet_row, facet_col, facet_page)
 	# 	
@@ -212,8 +227,11 @@ split_alpha_channel <- function(x, alpha) {
 	}
 }
 
-
-tmapLeafletRaster = function(shpTM, dt, gp, pdt, popup.format, hdt, idt, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLRaster
+#' @rdname tmapDeckGL
+tmapDeckGLRaster = function(shpTM, dt, gp, pdt, popup.format, hdt, idt, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
 	# 
 	# rc_text = frc(facet_row, facet_col)
 	# 
@@ -286,14 +304,17 @@ tmapLeafletRaster = function(shpTM, dt, gp, pdt, popup.format, hdt, idt, bbx, fa
 	# 	
 	# 	
 	# 	gp$lty = "solid"
-	# 	tmapLeafletPolygons(shpTM, dt, pdt, popup.format = NULL, hdt = NULL, idt = NULL, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o)
+	# 	tmapDeckGLPolygons(shpTM, dt, pdt, popup.format = NULL, hdt = NULL, idt = NULL, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o)
 	# 	#grid.shape(s, gp=gpar(fill=color, col=NA), bg.col=NA, i, k)
 	# }
 	NULL
 } 
 
-
-tmapLeafletText = function(shpTM, dt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
+#' @export
+#' @keywords internal
+#' @name tmapDeckGLText
+#' @rdname tmapDeckGL
+tmapDeckGLText = function(shpTM, dt, gp, bbx, facet_row, facet_col, facet_page, id, pane, group, o, ...) {
 	# args = list(...)
 	# 
 	# lf = get_lf(facet_row, facet_col, facet_page)
@@ -312,7 +333,7 @@ tmapLeafletText = function(shpTM, dt, gp, bbx, facet_row, facet_col, facet_page,
 	# 
 	# coords = sf::st_coordinates(shp)
 	# 
-	# opt = leaflet::pathOptions(interactive = TRUE, pane = pane)
+	# opt = DeckGL::pathOptions(interactive = TRUE, pane = pane)
 	# 
 	# cex_set = unique(gp$cex)
 	# alpha_set = unique(gp$col_alpha) 
@@ -343,7 +364,7 @@ tmapLeafletText = function(shpTM, dt, gp, bbx, facet_row, facet_col, facet_page,
 	# if (identical(clustering, FALSE)) {
 	# 	clustering = NULL
 	# } else if (identical(clustering, TRUE)) {
-	# 	clustering = leaflet::markerClusterOptions()	
+	# 	clustering = DeckGL::markerClusterOptions()	
 	# }
 	# 
 	# 
