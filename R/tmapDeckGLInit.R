@@ -4,7 +4,7 @@
 #' @keywords internal
 #' @name tmapDeckGLInit
 #' @rdname tmapDeckGL
-tmapDeckGLInit = function(o, return.asp = FALSE, vp) {
+tmapDeckGLInit = function(o, return.asp = FALSE, vp, prx, ...) {
 	if (return.asp) return(1)
 	
 	per_page = rep(o$ncols * o$nrows, o$npages)

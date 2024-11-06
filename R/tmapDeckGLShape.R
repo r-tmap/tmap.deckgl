@@ -24,6 +24,6 @@ tmapDeckGLShape = function(bbx, facet_row, facet_col, facet_page, o) {
 #' @keywords internal
 #' @name tmapDeckGLOverlay
 #' @rdname tmapDeckGL
-tmapDeckGLOverlay = function(facet_row, facet_col, facet_page, o) {
+tmapDeckGLOverlay = function(bbx, facet_row, facet_col, facet_page, o) {
 	NULL	
 }

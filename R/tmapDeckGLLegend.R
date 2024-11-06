@@ -12,6 +12,7 @@ DeckGL_pos = function(pos) {
   paste(x, collapse = "-")
 }
 
+cont_split = function(x) strsplit(x, split = "_", fixed=TRUE)
 
 gp_to_lpar = function(gp, mfun, shape = 20, pick_middle = TRUE) {
 	# create a list of gp elements
@@ -132,7 +133,7 @@ tmapDeckGLLegPlot.tm_legend_standard_landscape = function(comp, deck, o) {
 	tmapDeckGL_legend(comp, deck, o, orientation = "horizontal")
 }
 
-#' @param facet_row,facet_col,facet_pace row column and page id
+#' @param facet_row,facet_col,facet_page row column and page id
 #' @param class class
 #' @param stack stack
 #' @param stack_auto stack_auto

@@ -1,11 +1,19 @@
 #' @param show show
 #' @param knit knit
-#' @param arg args
+#' @param args args
 #' @export
 #' @keywords internal
 #' @name tmapDeckGLRun
+#' @importFrom grDevices col2rgb rgb
+#' @importFrom colorspace deutan protan tritan
+#' @importFrom htmltools tags
+#' @importFrom htmlwidgets prependContent
+#' @importFrom leafsync latticeview
+#' @import sf 
+#' @importFrom tmaptools bb_poly
+#' @importFrom units drop_units set_units
 #' @rdname tmapDeckGL
-tmapDeckGLRun = function(o, show, knit, args) {
+tmapDeckGLRun = function(o, q, show, knit, args) {
 	decks = get("decks", envir = .TMAP_DECKGL)
 	
 	decks2 = lapply(decks, function(decksi) {

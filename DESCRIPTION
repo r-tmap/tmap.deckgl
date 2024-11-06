@@ -1,22 +1,29 @@
 Package: tmap.deckgl
-License: GPL-3
 Title: Extension for 'tmap': maps are shown via deck.gl
 Type: Package
 LazyData: true
 Authors@R: c(
 	person("Martijn", "Tennekes", email = "mtennekes@gmail.com", role = c("aut", "cre"))
 	)
-Description: Extension for 'tmap': maps are shown via deck.gl
+Description: Extension package for tmap, which adds an additional mode, namely deckgl.
+License: GPL-3
 Version: 0.1
-Date: 2024-04-19
+Date: 2024-11-06
 Encoding: UTF-8
 Depends:
     R (>= 3.5.0),
 Imports:
     tmap (>= 3.99),
     deckgl,
-    data.table
+    data.table,
+    grDevices,
+    colorspace,
+    htmltools,
+    htmlwidgets,
+    leafsync,
+    sf,
+    tmaptools,
+    units
 URL: https://github.com/r-tmap/tmap.deckgl
 BugReports: https://github.com/r-tmap/deckgl/issues
-VignetteBuilder: knitr
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
