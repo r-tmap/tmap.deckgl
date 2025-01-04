@@ -20,6 +20,7 @@
 \alias{tmapDeckGLInit}
 \alias{tmapDeckGLAux}
 \alias{tmapDeckGLLegend}
+\alias{tmapDeckGLComp}
 \alias{tmapDeckGLRun}
 \alias{tmapDeckGLShape}
 \alias{tmapDeckGLOverlay}
@@ -62,7 +63,7 @@ tmapDeckGLInit(o, return.asp = FALSE, vp, prx, ...)
 
 tmapDeckGLAux(o, q)
 
-tmapDeckGLLegend(
+tmapDeckGLComp(
   comp,
   o,
   facet_row = NULL,

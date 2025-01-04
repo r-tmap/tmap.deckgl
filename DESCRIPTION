@@ -8,13 +8,14 @@ Authors@R: c(
 Description: Extension package for tmap, which adds an additional mode, namely deckgl.
 License: GPL-3
 Version: 0.1
-Date: 2024-11-06
+Date: 2025-01-04
 Encoding: UTF-8
 Depends:
     R (>= 3.5.0),
 Imports:
     tmap (>= 3.99),
     deckgl,
+    rlang,
     data.table,
     grDevices,
     colorspace,

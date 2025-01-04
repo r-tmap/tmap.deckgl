@@ -144,7 +144,7 @@ tmapDeckGLLegPlot.tm_legend_standard_landscape = function(comp, deck, o) {
 #' @keywords internal
 #' @name tmapDeckGLLegend
 #' @rdname tmapDeckGL
-tmapDeckGLLegend = function(comp, o, facet_row = NULL, facet_col = NULL, facet_page, class, stack, stack_auto, pos.h, pos.v, bbox) {
+tmapDeckGLComp = function(comp, o, facet_row = NULL, facet_col = NULL, facet_page, class, stack, stack_auto, pos.h, pos.v, bbox) {
 	deck = get_deck(facet_row, facet_col, facet_page)
 
 	rc_text = frc(facet_row, facet_col)

@@ -8,6 +8,12 @@
 \description{
 A new tmap mode, enabled via tmap_mode("deck").
 }
+\examples{
+library(tmap)
+
+tmap_mode("deck")
+tm_shape(World) + tm_polygons("HPI", fill.scale = tm_scale_intervals(values = "brewer.rd_yl_gn")) + tm_deck(pitch = 60, basemap.show = FALSE)
+}
 \seealso{
 Useful links:
 \itemize{

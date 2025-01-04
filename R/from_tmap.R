@@ -62,9 +62,8 @@ findZoom = function(b) {
 }
 
 
-process_color <- function(col, alpha=NA, sepia.intensity=0, saturation=1, color.vision.deficiency.sim="none") {
+process_color <- function(col, alpha=NA, sepia_intensity=0, saturation=1, color_vision_deficiency_sim="none") {
 	#if (length(col)>100) browser()
-	
 	isFactor <- is.factor(col)
 	
 	if (isFactor) {
@@ -78,14 +77,14 @@ process_color <- function(col, alpha=NA, sepia.intensity=0, saturation=1, color.
 	if (!is.na(alpha)) res[res[,4] != 0, 4] <- alpha * 255
 	
 	# convert to sepia
-	if (sepia.intensity!=0) {
+	if (sepia_intensity!=0) {
 		conv_matrix <- matrix(c(.393, .769, .189,
 								.349, .686, .168,
 								.272, .534, .131), ncol=3, byrow=FALSE)
-		res[,1:3] <-  (res[,1:3] %*% conv_matrix) * sepia.intensity + res[,1:3] * (1-sepia.intensity)
+		res[,1:3] <-  (res[,1:3] %*% conv_matrix) * sepia_intensity + res[,1:3] * (1-sepia_intensity)
 		res[res>255] <- 255
 		res[res<0] <- 0
-	}	
+	}
 	
 	# convert to black&white
 	if (saturation!=1) {
@@ -97,8 +96,9 @@ process_color <- function(col, alpha=NA, sepia.intensity=0, saturation=1, color.
 	
 	new_cols <- do.call("rgb", c(unname(as.data.frame(res)), list(maxColorValue=255)))
 	
+	rlang::check_installed("colorspace")
 	# color blind sim
-	sim_colors = switch(color.vision.deficiency.sim, 
+	sim_colors = switch(color_vision_deficiency_sim,
 						deutan = colorspace::deutan,
 						protan = colorspace::protan,
 						tritan = colorspace::tritan,

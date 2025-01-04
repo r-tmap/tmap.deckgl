@@ -2,7 +2,6 @@
 #'
 #' A new tmap mode, enabled via tmap_mode("deck").
 #' 
-#'
 #' @author Martijn Tennekes \email{mtennekes@@gmail.com}
 #' @import data.table
 #' @concept GIS
@@ -10,4 +9,5 @@
 #' @concept statistical maps
 #' @concept choropleth
 #' @concept bubble map
+#' @example examples/deckgl.R
 "_PACKAGE"
