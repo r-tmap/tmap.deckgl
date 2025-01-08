@@ -13,7 +13,11 @@ tmapDeckGLShape = function(bbx, facet_row, facet_col, facet_page, o) {
 	ll = c(mean(bbx[c(1,3)]), mean(bbx[c(2,4)]))
 	zoom = findZoom(bbx)
 
-	deck = deckgl::deckgl(zoom = zoom, latitude = ll[2], longitude = ll[1], pitch = o$pitch) 
+	if (length(dummy) == 0) {
+		deck = deckgl::deckgl(zoom = zoom, latitude = ll[2], longitude = ll[1], pitch = o$pitch) 
+	} else {
+		deck = dummy
+	}
 
 	assign_deck(deck, facet_row, facet_col, facet_page)
 

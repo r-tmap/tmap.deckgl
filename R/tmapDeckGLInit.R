@@ -4,7 +4,7 @@
 #' @keywords internal
 #' @name tmapDeckGLInit
 #' @rdname tmapDeckGL
-tmapDeckGLInit = function(o, return.asp = FALSE, vp, prx, ...) {
+tmapDeckGLInit = function(o, return.asp = FALSE, vp, prx, dg = NULL, ...) {
 	if (return.asp) return(1)
 	
 	per_page = rep(o$ncols * o$nrows, o$npages)
@@ -16,7 +16,7 @@ tmapDeckGLInit = function(o, return.asp = FALSE, vp, prx, ...) {
 
 	decks = lapply(per_page, function(p) {
 		lapply(seq_len(p), function(i) {
-			list() #dummy
+			if (!is.null(dg)) dg else list() #dummy
 			#deckgl::deckgl(zoom = 2, latitude = 0, longitude = 0, pitch = o$pitch) 
 			
 		})
